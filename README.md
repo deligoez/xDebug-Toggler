@@ -6,7 +6,7 @@
 
 <div align="center">
 
-# xDebug-Toggler
+### xDebug-Toggler
 
 Simple xDebug Toggler for macOS
 

@@ -93,6 +93,14 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
             }
         } catch {
             print("Can't toggle xDebug: \(error).")
+            
+            let alert = NSAlert()
+            alert.messageText = "ext-xdebug.ini file could not be found."
+            alert.informativeText = "Right click the app status bar icon and choose settings to set the file path."
+            alert.alertStyle = NSAlert.Style.warning
+            alert.addButton(withTitle: "OK")
+            
+            alert.runModal()
         }
         
         self.xDebugStatus.toggle()
@@ -100,6 +108,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
     
     @objc func openSettings() {
         print("Opening Settings...")
+
     }
     
     @objc func quitApplication() {

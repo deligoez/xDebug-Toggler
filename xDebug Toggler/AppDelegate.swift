@@ -11,8 +11,6 @@ import Cocoa
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
     
-    let path = "/usr/local/etc/php/7.4/conf.d/ext-xdebug.ini"
-    
     var statusBarItem: NSStatusItem!
     
     var statusBarMenu: NSMenu!
@@ -59,9 +57,15 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
     }
     
     func checkXDebugStatus() {
-        self.xDebugStatus = FileManager.default.fileExists(atPath: self.path)
-            ? true
-            : false
+        let status = XDebugManager.xDebugStatus()
+        
+        if status == nil {
+            XDebugManager.alertNotFound()
+            self.openSettings()
+        } else {
+            self.xDebugStatus = status
+            self.setIcon()
+        }
     }
     
     func setIcon() {
@@ -85,30 +89,22 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
     }
     
     @objc func toggleXDebug() {
-        do {
-            if self.xDebugStatus == true {
-                try FileManager.default.moveItem(atPath: path, toPath: path + ".disabled")
-            } else {
-                try FileManager.default.moveItem(atPath: path + ".disabled", toPath: path)
-            }
-        } catch {
-            print("Can't toggle xDebug: \(error).")
-            
-            let alert = NSAlert()
-            alert.messageText = "ext-xdebug.ini file could not be found."
-            alert.informativeText = "Right click the app status bar icon and choose settings to set the file path."
-            alert.alertStyle = NSAlert.Style.warning
-            alert.addButton(withTitle: "OK")
-            
-            alert.runModal()
-        }
+        XDebugManager.toggleXDebug()
         
         self.xDebugStatus.toggle()
     }
     
     @objc func openSettings() {
-        print("Opening Settings...")
-
+        let storyboard = NSStoryboard(name: NSStoryboard.Name("Main"), bundle: nil)
+        guard let vc = storyboard.instantiateController(withIdentifier: "ViewController") as? ViewController else { return }
+        vc.callbackClosure = { [weak self] in
+            self?.checkXDebugStatus()
+        }
+        
+        let popoverView = NSPopover()
+        popoverView.contentViewController = vc
+        popoverView.behavior = .semitransient
+        popoverView.show(relativeTo: statusBarItem.button!.bounds, of: statusBarItem.button!, preferredEdge: .maxY)
     }
     
     @objc func quitApplication() {

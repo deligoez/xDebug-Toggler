@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,6 +14,7 @@
 		1E97FD502496A4A20070611F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E97FD4E2496A4A20070611F /* Main.storyboard */; };
 		1E97FD5D2496ACC30070611F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1E97FD5C2496ACC30070611F /* Assets.xcassets */; };
 		1ED94381249AB11E0078D6C0 /* XDebugManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ED94380249AB11E0078D6C0 /* XDebugManager.swift */; };
+		1ED94384249ACADF0078D6C0 /* MASShortcut in Frameworks */ = {isa = PBXBuildFile; productRef = 1ED94383249ACADF0078D6C0 /* MASShortcut */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1ED94384249ACADF0078D6C0 /* MASShortcut in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,6 +90,9 @@
 			dependencies = (
 			);
 			name = "xDebug Toggler";
+			packageProductDependencies = (
+				1ED94383249ACADF0078D6C0 /* MASShortcut */,
+			);
 			productName = "xDebug Toggler";
 			productReference = 1E97FD452496A49D0070611F /* xDebug Toggler.app */;
 			productType = "com.apple.product-type.application";
@@ -116,6 +121,9 @@
 				Base,
 			);
 			mainGroup = 1E97FD3C2496A49D0070611F;
+			packageReferences = (
+				1ED94382249ACADF0078D6C0 /* XCRemoteSwiftPackageReference "MASShortcut" */,
+			);
 			productRefGroup = 1E97FD462496A49D0070611F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -339,6 +347,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		1ED94382249ACADF0078D6C0 /* XCRemoteSwiftPackageReference "MASShortcut" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/rampatra/MASShortcut";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.4.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1ED94383249ACADF0078D6C0 /* MASShortcut */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1ED94382249ACADF0078D6C0 /* XCRemoteSwiftPackageReference "MASShortcut" */;
+			productName = MASShortcut;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 1E97FD3D2496A49D0070611F /* Project object */;
 }

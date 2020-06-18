@@ -7,6 +7,7 @@
 //
 
 import Cocoa
+import MASShortcut
 
 class XDebugManager: NSObject {
     
@@ -70,7 +71,7 @@ class XDebugManager: NSObject {
         // The file path on defaults is not exists -> must be set from settings again
         return nil
     }
- 
+    
     class func alertNotFound() {
         let alert = NSAlert()
         alert.messageText = "ext-xdebug.ini file could not be found."
@@ -123,5 +124,21 @@ class XDebugManager: NSObject {
         } catch {
             self.alertCannotToggle()
         }
+    }
+    
+    class func saveShortcut(useModifier: Int, useKeyCode: Int) {
+        let shortcutValue: [String: Int] = ["modifier": useModifier, "keyCode": useKeyCode]
+        UserDefaults.standard.set(shortcutValue, forKey: "shortcut")
+    }
+    
+    class func getShortcut() -> MASShortcut? {
+        if let storedShortCutValue = UserDefaults.standard.dictionary(forKey: "shortcut") as? [String: Int] {
+            let modifierRawValue = storedShortCutValue["modifier"]!
+            let keyCode = storedShortCutValue["keyCode"]!
+            
+            return MASShortcut(keyCode: keyCode, modifierFlags: .init(rawValue: UInt(modifierRawValue)))
+        }
+        
+        return nil
     }
 }

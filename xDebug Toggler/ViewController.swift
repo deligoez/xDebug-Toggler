@@ -7,9 +7,12 @@
 //
 
 import Cocoa
+import MASShortcut
 
 class ViewController: NSViewController {
     var callbackClosure: (() -> Void)?
+    
+    @IBOutlet weak var shortcutView: MASShortcutView!
     
     @IBOutlet weak var xDebugFilePath: NSTextField!
     
@@ -17,6 +20,10 @@ class ViewController: NSViewController {
         super.viewDidLoad()
         
         xDebugFilePath.stringValue = UserDefaults.standard.string(forKey: "xDebugFilePath") ?? ""
+        
+        self.getShortcut()
+        
+        self.watchShortcutKeyChanges()
     }
     
     override func viewDidDisappear() {
@@ -56,6 +63,9 @@ class ViewController: NSViewController {
                 UserDefaults.standard.set(self.xDebugFilePath.stringValue, forKey: "xDebugFilePath")
             }
             
+            // Save shortcut
+            self.saveShortcut()
+            
             self.closeSettings(sender)
         } else {
             XDebugManager.alertSetFilePath()
@@ -64,6 +74,29 @@ class ViewController: NSViewController {
     
     @IBAction func closeSettings(_ sender: Any) {
         self.view.window?.performClose(sender)
+    }
+    
+    func saveShortcut() {
+        if let shortcut = self.shortcutView.shortcutValue {
+            XDebugManager.saveShortcut(useModifier: Int(shortcut.modifierFlags.rawValue), useKeyCode: shortcut.keyCode)
+        }
+    }
+    
+    func getShortcut() {
+        self.shortcutView.shortcutValue = XDebugManager.getShortcut()
+    }
+    
+    func watchShortcutKeyChanges() {
+        let appDelegate: AppDelegate? = NSApplication.shared.delegate as? AppDelegate
+        
+        self.shortcutView.shortcutValueChange = { (sender) in
+            
+            if self.shortcutView.shortcutValue != nil {
+                MASShortcutMonitor.shared().register(self.shortcutView.shortcutValue, withAction: appDelegate?.toggleXDebug)
+            } else {
+                MASShortcutMonitor.shared()?.unregisterAllShortcuts()
+            }
+        }
     }
     
     

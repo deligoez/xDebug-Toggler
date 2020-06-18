@@ -132,17 +132,6 @@
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="2yN-iv-S6c">
-                                <rect key="frame" x="20" y="55" width="172" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="172" id="Vy3-5W-Kxc"/>
-                                </constraints>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" id="HMF-xx-omm">
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="VRx-57-Dgt">
                                 <rect key="frame" x="343" y="13" width="123" height="32"/>
                                 <buttonCell key="cell" type="push" title="Save Settings" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="kJV-G7-gSO">
@@ -173,26 +162,32 @@
                                     <action selector="closeSettings:" target="HjG-kB-Jyt" id="7va-oZ-C6K"/>
                                 </connections>
                             </button>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="OlH-Eq-Kt2" customClass="MASShortcutView">
+                                <rect key="frame" x="20" y="55" width="208" height="21"/>
+                            </customView>
                         </subviews>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="lTk-Z7-fHE" secondAttribute="trailing" constant="20" symbolic="YES" id="0IL-uH-hCN"/>
-                            <constraint firstItem="6Fc-wz-l90" firstAttribute="leading" secondItem="rOx-uY-uBc" secondAttribute="leading" constant="20" symbolic="YES" id="2eY-He-OiR"/>
-                            <constraint firstItem="pVd-ha-dd1" firstAttribute="top" secondItem="SoG-OU-9pP" secondAttribute="bottom" constant="8" symbolic="YES" id="5Dj-Lb-2kJ"/>
-                            <constraint firstItem="pVd-ha-dd1" firstAttribute="leading" secondItem="2yN-iv-S6c" secondAttribute="leading" id="5jS-Vh-THy"/>
-                            <constraint firstItem="Pjw-QH-Ddo" firstAttribute="baseline" secondItem="VRx-57-Dgt" secondAttribute="baseline" id="BWy-8r-ShS"/>
-                            <constraint firstItem="6Fc-wz-l90" firstAttribute="top" secondItem="rOx-uY-uBc" secondAttribute="top" constant="20" symbolic="YES" id="CHJ-Ok-k5Y"/>
-                            <constraint firstItem="SoG-OU-9pP" firstAttribute="baseline" secondItem="lTk-Z7-fHE" secondAttribute="baseline" id="HzV-zj-GZN"/>
-                            <constraint firstItem="SoG-OU-9pP" firstAttribute="leading" secondItem="pVd-ha-dd1" secondAttribute="leading" id="QV3-kv-59o"/>
-                            <constraint firstItem="2yN-iv-S6c" firstAttribute="leading" secondItem="Pjw-QH-Ddo" secondAttribute="leading" id="SVX-zW-gTg"/>
-                            <constraint firstAttribute="bottom" secondItem="Pjw-QH-Ddo" secondAttribute="bottom" constant="20" symbolic="YES" id="Ti5-WY-eaE"/>
-                            <constraint firstItem="2yN-iv-S6c" firstAttribute="top" secondItem="pVd-ha-dd1" secondAttribute="bottom" constant="8" symbolic="YES" id="Zil-E8-aXi"/>
-                            <constraint firstItem="lTk-Z7-fHE" firstAttribute="leading" secondItem="SoG-OU-9pP" secondAttribute="trailing" constant="8" symbolic="YES" id="l7g-zw-N5c"/>
-                            <constraint firstItem="6Fc-wz-l90" firstAttribute="leading" secondItem="SoG-OU-9pP" secondAttribute="leading" id="nEQ-u0-Hxt"/>
-                            <constraint firstItem="lTk-Z7-fHE" firstAttribute="trailing" secondItem="VRx-57-Dgt" secondAttribute="trailing" id="npY-89-CAg"/>
-                            <constraint firstItem="SoG-OU-9pP" firstAttribute="top" secondItem="6Fc-wz-l90" secondAttribute="bottom" constant="8" symbolic="YES" id="yVw-2C-bf0"/>
+                            <constraint firstItem="OlH-Eq-Kt2" firstAttribute="top" secondItem="pVd-ha-dd1" secondAttribute="bottom" constant="8" symbolic="YES" id="7yz-II-d6c"/>
+                            <constraint firstItem="6Fc-wz-l90" firstAttribute="leading" secondItem="SoG-OU-9pP" secondAttribute="leading" id="9yX-fd-Fqv"/>
+                            <constraint firstItem="SoG-OU-9pP" firstAttribute="baseline" secondItem="lTk-Z7-fHE" secondAttribute="baseline" id="A5H-2A-GOV"/>
+                            <constraint firstItem="Pjw-QH-Ddo" firstAttribute="baseline" secondItem="VRx-57-Dgt" secondAttribute="baseline" id="Fnr-d4-1Se"/>
+                            <constraint firstItem="lTk-Z7-fHE" firstAttribute="trailing" secondItem="VRx-57-Dgt" secondAttribute="trailing" id="HB8-oh-6J9"/>
+                            <constraint firstItem="OlH-Eq-Kt2" firstAttribute="leading" secondItem="Pjw-QH-Ddo" secondAttribute="leading" id="HzG-ax-WEI"/>
+                            <constraint firstItem="SoG-OU-9pP" firstAttribute="top" secondItem="6Fc-wz-l90" secondAttribute="bottom" constant="8" symbolic="YES" id="RNR-tD-njD"/>
+                            <constraint firstAttribute="trailing" secondItem="OlH-Eq-Kt2" secondAttribute="trailing" constant="252" id="Z37-W0-B8x"/>
+                            <constraint firstAttribute="bottom" secondItem="Pjw-QH-Ddo" secondAttribute="bottom" constant="20" symbolic="YES" id="c1H-OV-mLp"/>
+                            <constraint firstItem="pVd-ha-dd1" firstAttribute="top" secondItem="SoG-OU-9pP" secondAttribute="bottom" constant="8" symbolic="YES" id="cZG-EL-Cis"/>
+                            <constraint firstItem="6Fc-wz-l90" firstAttribute="leading" secondItem="rOx-uY-uBc" secondAttribute="leading" constant="20" symbolic="YES" id="dwJ-8R-eWg"/>
+                            <constraint firstAttribute="trailing" secondItem="lTk-Z7-fHE" secondAttribute="trailing" constant="20" symbolic="YES" id="eim-55-D8R"/>
+                            <constraint firstItem="Pjw-QH-Ddo" firstAttribute="top" secondItem="OlH-Eq-Kt2" secondAttribute="bottom" constant="14" id="hcC-y6-CA9"/>
+                            <constraint firstItem="pVd-ha-dd1" firstAttribute="leading" secondItem="OlH-Eq-Kt2" secondAttribute="leading" id="j5D-bl-0yi"/>
+                            <constraint firstItem="SoG-OU-9pP" firstAttribute="leading" secondItem="pVd-ha-dd1" secondAttribute="leading" id="pjV-sV-izU"/>
+                            <constraint firstItem="lTk-Z7-fHE" firstAttribute="leading" secondItem="SoG-OU-9pP" secondAttribute="trailing" constant="8" symbolic="YES" id="qP4-QR-mtV"/>
+                            <constraint firstItem="6Fc-wz-l90" firstAttribute="top" secondItem="rOx-uY-uBc" secondAttribute="top" constant="20" symbolic="YES" id="qxE-j5-7pi"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="shortcutView" destination="OlH-Eq-Kt2" id="zRr-40-qhB"/>
                         <outlet property="xDebugFilePath" destination="SoG-OU-9pP" id="Qf6-pn-utY"/>
                     </connections>
                 </viewController>

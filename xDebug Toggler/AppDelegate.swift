@@ -7,6 +7,7 @@
 //
 
 import Cocoa
+import MASShortcut
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
@@ -14,6 +15,8 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
     var statusBarItem: NSStatusItem!
     
     var statusBarMenu: NSMenu!
+    
+    var shortcut: MASShortcut?
     
     var xDebugStatus: Bool! {
         didSet(value) {
@@ -31,6 +34,10 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
         checkXDebugStatus()
         
         buildMenu()
+        
+        self.shortcut = XDebugManager.getShortcut()
+        
+        self.watchShortcutKeyChanges()
     }
     
     func applicationWillTerminate(_ aNotification: Notification) {
@@ -111,4 +118,11 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
         NSApplication.shared.terminate(self)
     }
     
+    func watchShortcutKeyChanges() {
+        if self.shortcut != nil {
+            MASShortcutMonitor.shared()?.register(self.shortcut, withAction: self.toggleXDebug)
+        } else {
+            MASShortcutMonitor.shared()?.unregisterAllShortcuts()
+        }
+    }
 }

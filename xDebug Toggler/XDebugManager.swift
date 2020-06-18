@@ -141,4 +141,8 @@ class XDebugManager: NSObject {
         
         return nil
     }
+    
+    class func removeShortcut() {
+        UserDefaults.standard.removeObject(forKey: "shortcut")
+    }
 }

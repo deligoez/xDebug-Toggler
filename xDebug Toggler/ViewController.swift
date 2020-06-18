@@ -95,6 +95,7 @@ class ViewController: NSViewController {
                 MASShortcutMonitor.shared().register(self.shortcutView.shortcutValue, withAction: appDelegate?.toggleXDebug)
             } else {
                 MASShortcutMonitor.shared()?.unregisterAllShortcuts()
+                XDebugManager.removeShortcut()
             }
         }
     }

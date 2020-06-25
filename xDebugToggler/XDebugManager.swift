@@ -121,6 +121,8 @@ class XDebugManager: NSObject {
             } else {
                 try FileManager.default.moveItem(atPath: path + ".disabled", toPath: path)
             }
+            
+            self.restartServices()
         } catch {
             self.alertCannotToggle()
         }
@@ -146,7 +148,7 @@ class XDebugManager: NSObject {
         UserDefaults.standard.removeObject(forKey: "shortcut")
     }
     
-    func restartBrewServices(service: String) {
+    class func restartBrewServices(service: String) {
         let pipe = Pipe()
         let brew = Process()
         
@@ -187,5 +189,32 @@ class XDebugManager: NSObject {
         UserDefaults.standard.register(defaults: [
             "serviceDnsmasq": NSControl.StateValue.off.rawValue
         ])
+    }
+    
+    class func restartServices() {
+        if NSControl.StateValue(UserDefaults.standard.integer(forKey:"serviceAll")).rawValue == NSControl.StateValue.on.rawValue {
+            self.restartBrewServices(service: "--all")
+        } else {
+            if NSControl.StateValue(UserDefaults.standard.integer(forKey:"servicePhp")).rawValue == NSControl.StateValue.on.rawValue {
+                self.restartBrewServices(service: "php")
+            }
+            
+            if NSControl.StateValue(UserDefaults.standard.integer(forKey:"serviceNginx")).rawValue == NSControl.StateValue.on.rawValue {
+                self.restartBrewServices(service: "nginx")
+            }
+            
+            if NSControl.StateValue(UserDefaults.standard.integer(forKey:"serviceRedis")).rawValue == NSControl.StateValue.on.rawValue {
+                self.restartBrewServices(service: "redis")
+            }
+            
+            if NSControl.StateValue(UserDefaults.standard.integer(forKey:"serviceMysql")).rawValue == NSControl.StateValue.on.rawValue {
+                self.restartBrewServices(service: "mysql")
+            }
+            
+            if NSControl.StateValue(UserDefaults.standard.integer(forKey:"serviceDnsmasq")).rawValue == NSControl.StateValue.on.rawValue {
+                self.restartBrewServices(service: "dnsmasq")
+            }
+        }
+        
     }
 }

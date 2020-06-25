@@ -98,6 +98,8 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
     }
     
     @objc func toggleXDebug() {
+        statusBarItem.button?.image = NSImage(named:NSImage.Name("wait"))
+        
         XDebugManager.toggleXDebug()
         
         self.xDebugStatus.toggle()

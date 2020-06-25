@@ -39,7 +39,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
         
         self.watchShortcutKeyChanges()
         
-        XDebugManager.registerServiceSettings()
+        XDebugManager.registerSetttings()
     }
     
     func applicationWillTerminate(_ aNotification: Notification) {
@@ -103,6 +103,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
         XDebugManager.toggleXDebug()
         
         self.xDebugStatus.toggle()
+        self.showNotification()
     }
     
     @objc func openSettings() {
@@ -127,6 +128,24 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
             MASShortcutMonitor.shared()?.register(self.shortcut, withAction: self.toggleXDebug)
         } else {
             MASShortcutMonitor.shared()?.unregisterAllShortcuts()
+        }
+    }
+    
+    func showNotification() {
+        if NSControl.StateValue(UserDefaults.standard.integer(forKey:"showNotification")).rawValue == NSControl.StateValue.on.rawValue {
+            NSUserNotificationCenter.default.removeAllDeliveredNotifications()
+            
+            let notification = NSUserNotification()
+            notification.hasActionButton = false
+            
+            var attributes = [NSAttributedString.Key: AnyObject]()
+            attributes[.foregroundColor] = NSColor.red
+            
+            notification.title = (self.xDebugStatus ? "ON" : "OFF")
+            notification.subtitle = "xDebug is " + (self.xDebugStatus ? "ON" : "OFF")
+            
+            NSUserNotificationCenter.default.scheduleNotification(notification)
+            NSUserNotificationCenter.default.perform(#selector(NSUserNotificationCenter.removeDeliveredNotification(_:)), with: notification, afterDelay: 2)
         }
     }
 }

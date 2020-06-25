@@ -165,7 +165,8 @@ class XDebugManager: NSObject {
         print(output)
     }
     
-    class func registerServiceSettings() {
+    class func registerSetttings() {
+        // Services
         UserDefaults.standard.register(defaults: [
             "serviceAll": NSControl.StateValue.off.rawValue
         ])
@@ -188,6 +189,11 @@ class XDebugManager: NSObject {
         
         UserDefaults.standard.register(defaults: [
             "serviceDnsmasq": NSControl.StateValue.off.rawValue
+        ])
+        
+        // Show notification
+        UserDefaults.standard.register(defaults: [
+            "showNotification": NSControl.StateValue.off.rawValue
         ])
     }
     

@@ -12,6 +12,9 @@ import MASShortcut
 class ViewController: NSViewController {
     var callbackClosure: (() -> Void)?
     
+    @IBOutlet weak var showNotification: NSButton!
+    
+    
     @IBOutlet weak var shortcutView: MASShortcutView!
     @IBOutlet weak var xDebugFilePath: NSTextField!
     @IBOutlet weak var phpService: NSButton!
@@ -31,6 +34,8 @@ class ViewController: NSViewController {
         self.watchShortcutKeyChanges()
         
         self.getServiceRestarts()
+        
+        self.getShowNotification()
     }
     
     override func viewDidDisappear() {
@@ -76,6 +81,9 @@ class ViewController: NSViewController {
             
             // Save service restarts
             self.saveServiceRestarts()
+            
+            // Save show notification
+            self.saveNotification()
             
             self.closeSettings(sender)
         } else {
@@ -149,6 +157,12 @@ class ViewController: NSViewController {
         }
     }
     
+    func saveNotification() {
+        UserDefaults.standard.set(self.showNotification.state.rawValue, forKey:"showNotification")
+    }
     
+    func getShowNotification() {        
+        self.showNotification.state = NSControl.StateValue(UserDefaults.standard.integer(forKey:"showNotification"))
+    }
 }
 

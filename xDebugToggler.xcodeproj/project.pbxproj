@@ -20,12 +20,12 @@
 /* Begin PBXFileReference section */
 		1E4EF7882496D89000EC2CBE /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		1E4EF7892496D89100EC2CBE /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
-		1E97FD452496A49D0070611F /* xDebug Toggler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "xDebug Toggler.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1E97FD452496A49D0070611F /* xDebugToggler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = xDebugToggler.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E97FD482496A49D0070611F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1E97FD4A2496A49D0070611F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		1E97FD4F2496A4A20070611F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1E97FD512496A4A20070611F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1E97FD522496A4A20070611F /* xDebug_Toggler.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = xDebug_Toggler.entitlements; sourceTree = "<group>"; };
+		1E97FD522496A4A20070611F /* xDebugToggler.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = xDebugToggler.entitlements; sourceTree = "<group>"; };
 		1E97FD5C2496ACC30070611F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1ED94380249AB11E0078D6C0 /* XDebugManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XDebugManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -45,7 +45,7 @@
 		1E97FD3C2496A49D0070611F = {
 			isa = PBXGroup;
 			children = (
-				1E97FD472496A49D0070611F /* xDebug Toggler */,
+				1E97FD472496A49D0070611F /* xDebugToggler */,
 				1E97FD462496A49D0070611F /* Products */,
 				1E4EF7892496D89100EC2CBE /* LICENSE */,
 				1E4EF7882496D89000EC2CBE /* README.md */,
@@ -55,12 +55,12 @@
 		1E97FD462496A49D0070611F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1E97FD452496A49D0070611F /* xDebug Toggler.app */,
+				1E97FD452496A49D0070611F /* xDebugToggler.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		1E97FD472496A49D0070611F /* xDebug Toggler */ = {
+		1E97FD472496A49D0070611F /* xDebugToggler */ = {
 			isa = PBXGroup;
 			children = (
 				1E97FD482496A49D0070611F /* AppDelegate.swift */,
@@ -69,17 +69,17 @@
 				1E97FD4E2496A4A20070611F /* Main.storyboard */,
 				1E97FD5C2496ACC30070611F /* Assets.xcassets */,
 				1E97FD512496A4A20070611F /* Info.plist */,
-				1E97FD522496A4A20070611F /* xDebug_Toggler.entitlements */,
+				1E97FD522496A4A20070611F /* xDebugToggler.entitlements */,
 			);
-			path = "xDebug Toggler";
+			path = xDebugToggler;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		1E97FD442496A49D0070611F /* xDebug Toggler */ = {
+		1E97FD442496A49D0070611F /* xDebugToggler */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1E97FD552496A4A20070611F /* Build configuration list for PBXNativeTarget "xDebug Toggler" */;
+			buildConfigurationList = 1E97FD552496A4A20070611F /* Build configuration list for PBXNativeTarget "xDebugToggler" */;
 			buildPhases = (
 				1E97FD412496A49D0070611F /* Sources */,
 				1E97FD422496A49D0070611F /* Frameworks */,
@@ -89,12 +89,12 @@
 			);
 			dependencies = (
 			);
-			name = "xDebug Toggler";
+			name = xDebugToggler;
 			packageProductDependencies = (
 				1ED94383249ACADF0078D6C0 /* MASShortcut */,
 			);
 			productName = "xDebug Toggler";
-			productReference = 1E97FD452496A49D0070611F /* xDebug Toggler.app */;
+			productReference = 1E97FD452496A49D0070611F /* xDebugToggler.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -112,7 +112,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 1E97FD402496A49D0070611F /* Build configuration list for PBXProject "xDebug Toggler" */;
+			buildConfigurationList = 1E97FD402496A49D0070611F /* Build configuration list for PBXProject "xDebugToggler" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -128,7 +128,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				1E97FD442496A49D0070611F /* xDebug Toggler */,
+				1E97FD442496A49D0070611F /* xDebugToggler */,
 			);
 		};
 /* End PBXProject section */
@@ -222,7 +222,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -276,7 +276,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
@@ -289,17 +289,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = "xDebug Toggler/xDebug_Toggler.entitlements";
+				CODE_SIGN_ENTITLEMENTS = xDebugToggler/xDebugToggler.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = FGAL7W2M9U;
 				ENABLE_HARDENED_RUNTIME = YES;
-				INFOPLIST_FILE = "xDebug Toggler/Info.plist";
+				INFOPLIST_FILE = xDebugToggler/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "deligoez.xDebug-Toggler";
+				PRODUCT_BUNDLE_IDENTIFIER = deligoez.xDebugToggler;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -309,17 +309,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = "xDebug Toggler/xDebug_Toggler.entitlements";
+				CODE_SIGN_ENTITLEMENTS = xDebugToggler/xDebugToggler.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = FGAL7W2M9U;
 				ENABLE_HARDENED_RUNTIME = YES;
-				INFOPLIST_FILE = "xDebug Toggler/Info.plist";
+				INFOPLIST_FILE = xDebugToggler/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "deligoez.xDebug-Toggler";
+				PRODUCT_BUNDLE_IDENTIFIER = deligoez.xDebugToggler;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -328,7 +328,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1E97FD402496A49D0070611F /* Build configuration list for PBXProject "xDebug Toggler" */ = {
+		1E97FD402496A49D0070611F /* Build configuration list for PBXProject "xDebugToggler" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1E97FD532496A4A20070611F /* Debug */,
@@ -337,7 +337,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1E97FD552496A4A20070611F /* Build configuration list for PBXNativeTarget "xDebug Toggler" */ = {
+		1E97FD552496A4A20070611F /* Build configuration list for PBXNativeTarget "xDebugToggler" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1E97FD562496A4A20070611F /* Debug */,

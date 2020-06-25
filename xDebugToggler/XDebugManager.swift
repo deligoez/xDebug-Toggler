@@ -145,4 +145,47 @@ class XDebugManager: NSObject {
     class func removeShortcut() {
         UserDefaults.standard.removeObject(forKey: "shortcut")
     }
+    
+    func restartBrewServices(service: String) {
+        let pipe = Pipe()
+        let brew = Process()
+        
+        brew.launchPath = "/usr/local/bin/brew"
+        brew.arguments = ["services", "restart", service]
+        brew.standardOutput = pipe
+        
+        brew.launch()
+        brew.waitUntilExit()
+        
+        let data = pipe.fileHandleForReading.readDataToEndOfFile()
+        let output = String(data: data, encoding: .utf8)!
+        
+        print(output)
+    }
+    
+    class func registerServiceSettings() {
+        UserDefaults.standard.register(defaults: [
+            "serviceAll": NSControl.StateValue.off.rawValue
+        ])
+        
+        UserDefaults.standard.register(defaults: [
+            "servicePhp": NSControl.StateValue.off.rawValue
+        ])
+        
+        UserDefaults.standard.register(defaults: [
+            "serviceNginx": NSControl.StateValue.off.rawValue
+        ])
+        
+        UserDefaults.standard.register(defaults: [
+            "serviceRedis": NSControl.StateValue.off.rawValue
+        ])
+        
+        UserDefaults.standard.register(defaults: [
+            "serviceMysql": NSControl.StateValue.off.rawValue
+        ])
+        
+        UserDefaults.standard.register(defaults: [
+            "serviceDnsmasq": NSControl.StateValue.off.rawValue
+        ])
+    }
 }

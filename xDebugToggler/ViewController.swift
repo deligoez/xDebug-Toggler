@@ -13,8 +13,13 @@ class ViewController: NSViewController {
     var callbackClosure: (() -> Void)?
     
     @IBOutlet weak var shortcutView: MASShortcutView!
-    
     @IBOutlet weak var xDebugFilePath: NSTextField!
+    @IBOutlet weak var phpService: NSButton!
+    @IBOutlet weak var nginxService: NSButton!
+    @IBOutlet weak var redisService: NSButton!
+    @IBOutlet weak var mysqlService: NSButton!
+    @IBOutlet weak var dnsmasqService: NSButton!
+    @IBOutlet weak var allServices: NSButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +29,8 @@ class ViewController: NSViewController {
         self.getShortcut()
         
         self.watchShortcutKeyChanges()
+        
+        self.getServiceRestarts()
     }
     
     override func viewDidDisappear() {
@@ -54,7 +61,8 @@ class ViewController: NSViewController {
     
     @IBAction func saveSettings(_ sender: Any) {
         if  xDebugFilePath.stringValue.contains("ext-xdebug.ini") &&
-            FileManager.default.isReadableFile(atPath: self.xDebugFilePath.stringValue) {
+            (FileManager.default.isReadableFile(atPath: self.xDebugFilePath.stringValue) ||
+            FileManager.default.isReadableFile(atPath: self.xDebugFilePath.stringValue + ".disabled")) {
             
             // Check for disabled state
             if xDebugFilePath.stringValue.contains(".disabled") {
@@ -65,6 +73,9 @@ class ViewController: NSViewController {
             
             // Save shortcut
             self.saveShortcut()
+            
+            // Save service restarts
+            self.saveServiceRestarts()
             
             self.closeSettings(sender)
         } else {
@@ -97,6 +108,44 @@ class ViewController: NSViewController {
                 MASShortcutMonitor.shared()?.unregisterAllShortcuts()
                 XDebugManager.removeShortcut()
             }
+        }
+    }
+    
+    func saveServiceRestarts() {
+        // Check if all services should have restarted
+        UserDefaults.standard.set(self.allServices.state.rawValue, forKey:"serviceAll")
+        
+        if self.allServices.state == .on {
+            UserDefaults.standard.set(NSControl.StateValue.off.rawValue, forKey:"servicePhp")
+            UserDefaults.standard.set(NSControl.StateValue.off.rawValue, forKey:"serviceNginx")
+            UserDefaults.standard.set(NSControl.StateValue.off.rawValue, forKey:"serviceRedis")
+            UserDefaults.standard.set(NSControl.StateValue.off.rawValue, forKey:"serviceMysql")
+            UserDefaults.standard.set(NSControl.StateValue.off.rawValue, forKey:"serviceDnsmasq")
+        } else {
+            UserDefaults.standard.set(self.phpService.state.rawValue, forKey:"servicePhp")
+            UserDefaults.standard.set(self.nginxService.state.rawValue, forKey:"serviceNginx")
+            UserDefaults.standard.set(self.redisService.state.rawValue, forKey:"serviceRedis")
+            UserDefaults.standard.set(self.mysqlService.state.rawValue, forKey:"serviceMysql")
+            UserDefaults.standard.set(self.dnsmasqService.state.rawValue, forKey:"serviceDnsmasq")
+        }
+    }
+    
+    func getServiceRestarts() {
+        self.allServices.state = NSControl.StateValue(UserDefaults.standard.integer(forKey:"serviceAll"))
+        self.phpService.state = NSControl.StateValue(UserDefaults.standard.integer(forKey:"servicePhp"))
+        self.nginxService.state = NSControl.StateValue(UserDefaults.standard.integer(forKey:"serviceNginx"))
+        self.redisService.state = NSControl.StateValue(UserDefaults.standard.integer(forKey:"serviceRedis"))
+        self.mysqlService.state = NSControl.StateValue(UserDefaults.standard.integer(forKey:"serviceMysql"))
+        self.dnsmasqService.state = NSControl.StateValue(UserDefaults.standard.integer(forKey:"serviceDnsmasq"))
+    }
+    
+    @IBAction func toggleServices(_ sender: Any) {
+        if self.allServices.state == .on {
+            self.phpService.state = NSControl.StateValue.off
+            self.nginxService.state = NSControl.StateValue.off
+            self.redisService.state = NSControl.StateValue.off
+            self.mysqlService.state = NSControl.StateValue.off
+            self.dnsmasqService.state = NSControl.StateValue.off
         }
     }
     

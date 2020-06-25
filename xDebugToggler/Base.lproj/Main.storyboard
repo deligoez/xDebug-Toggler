@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
+        <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="16097"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -11,11 +12,11 @@
                 <application id="hnw-xV-0zn" sceneMemberID="viewController">
                     <menu key="mainMenu" title="Main Menu" systemMenu="main" id="AYu-sK-qS6">
                         <items>
-                            <menuItem title="xDebug Toggler" id="1Xt-HY-uBw">
+                            <menuItem title="xDebugToggler" id="1Xt-HY-uBw">
                                 <modifierMask key="keyEquivalentModifierMask"/>
-                                <menu key="submenu" title="xDebug Toggler" systemMenu="apple" id="uQy-DD-JDr">
+                                <menu key="submenu" title="xDebugToggler" systemMenu="apple" id="uQy-DD-JDr">
                                     <items>
-                                        <menuItem title="About xDebug Toggler" id="5kV-Vb-QxS">
+                                        <menuItem title="About xDebugToggler" id="5kV-Vb-QxS">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
                                                 <action selector="orderFrontStandardAboutPanel:" target="Ady-hI-5gd" id="Exp-CZ-Vem"/>
@@ -29,7 +30,7 @@
                                             <menu key="submenu" title="Services" systemMenu="services" id="hz9-B4-Xy5"/>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="4je-JR-u6R"/>
-                                        <menuItem title="Hide xDebug Toggler" keyEquivalent="h" id="Olw-nP-bQN">
+                                        <menuItem title="Hide xDebugToggler" keyEquivalent="h" id="Olw-nP-bQN">
                                             <connections>
                                                 <action selector="hide:" target="Ady-hI-5gd" id="PnN-Uc-m68"/>
                                             </connections>
@@ -47,7 +48,7 @@
                                             </connections>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="kCx-OE-vgT"/>
-                                        <menuItem title="Quit xDebug Toggler" keyEquivalent="q" id="4sb-4s-VLi">
+                                        <menuItem title="Quit xDebugToggler" keyEquivalent="q" id="4sb-4s-VLi">
                                             <connections>
                                                 <action selector="terminate:" target="Ady-hI-5gd" id="Te7-pn-YzF"/>
                                             </connections>
@@ -59,7 +60,7 @@
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <menu key="submenu" title="Help" systemMenu="help" id="F2S-fz-NVQ">
                                     <items>
-                                        <menuItem title="xDebug Toggler Help" keyEquivalent="?" id="FKE-Sm-Kum">
+                                        <menuItem title="xDebugToggler Help" keyEquivalent="?" id="FKE-Sm-Kum">
                                             <connections>
                                                 <action selector="showHelp:" target="Ady-hI-5gd" id="y7X-2Q-9no"/>
                                             </connections>
@@ -73,7 +74,7 @@
                         <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
                     </connections>
                 </application>
-                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="xDebug_Toggler" customModuleProvider="target"/>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="xDebugToggler" customModuleProvider="target"/>
                 <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -103,13 +104,13 @@
         <!--View Controller-->
         <scene sceneID="5rB-Kb-tEN">
             <objects>
-                <viewController storyboardIdentifier="ViewController" id="HjG-kB-Jyt" customClass="ViewController" customModule="xDebug_Toggler" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ViewController" id="HjG-kB-Jyt" customClass="ViewController" customModule="xDebugToggler" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="rOx-uY-uBc">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="173"/>
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="233"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="6Fc-wz-l90">
-                                <rect key="frame" x="18" y="137" width="130" height="16"/>
+                                <rect key="frame" x="18" y="197" width="130" height="16"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="ext-xdebug.ini Path: " id="dmE-7p-HDt">
                                     <font key="font" usesAppearanceFont="YES"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -117,7 +118,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="SoG-OU-9pP">
-                                <rect key="frame" x="20" y="108" width="378" height="21"/>
+                                <rect key="frame" x="20" y="168" width="378" height="21"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" id="NJE-t8-eG5">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -125,7 +126,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="pVd-ha-dd1">
-                                <rect key="frame" x="18" y="84" width="103" height="16"/>
+                                <rect key="frame" x="18" y="144" width="103" height="16"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Global Shortcut:" id="AWQ-Yi-twU">
                                     <font key="font" usesAppearanceFont="YES"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -143,7 +144,7 @@
                                 </connections>
                             </button>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="lTk-Z7-fHE">
-                                <rect key="frame" x="400" y="101" width="66" height="32"/>
+                                <rect key="frame" x="400" y="161" width="66" height="32"/>
                                 <buttonCell key="cell" type="push" title="Find" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="esx-wo-LoO">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -163,37 +164,110 @@
                                 </connections>
                             </button>
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="OlH-Eq-Kt2" customClass="MASShortcutView">
-                                <rect key="frame" x="20" y="55" width="208" height="21"/>
+                                <rect key="frame" x="20" y="115" width="208" height="21"/>
                             </customView>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Mfy-fm-G9z">
+                                <rect key="frame" x="18" y="83" width="263" height="16"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Restart Homebrew services while toggling:" id="94x-E7-bLb">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="9j6-oA-7W1">
+                                <rect key="frame" x="18" y="59" width="46" height="18"/>
+                                <buttonCell key="cell" type="check" title="php" bezelStyle="regularSquare" imagePosition="left" inset="2" id="h5H-wd-XpB">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                            </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Q1m-3r-nuM">
+                                <rect key="frame" x="68" y="59" width="55" height="18"/>
+                                <buttonCell key="cell" type="check" title="nginx" bezelStyle="regularSquare" imagePosition="left" inset="2" id="skC-MR-0LK">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                            </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Heg-5G-Dch">
+                                <rect key="frame" x="127" y="59" width="52" height="18"/>
+                                <buttonCell key="cell" type="check" title="redis" bezelStyle="regularSquare" imagePosition="left" inset="2" id="rdX-c6-BcJ">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                            </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="nr3-73-krd">
+                                <rect key="frame" x="183" y="59" width="58" height="18"/>
+                                <buttonCell key="cell" type="check" title="mysql" bezelStyle="regularSquare" imagePosition="left" inset="2" id="fYD-W7-jYh">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                            </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Ucl-2d-lH8">
+                                <rect key="frame" x="245" y="59" width="78" height="18"/>
+                                <buttonCell key="cell" type="check" title="dnsmasq" bezelStyle="regularSquare" imagePosition="left" inset="2" id="5AH-bh-m84">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                            </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="6t7-8U-NLJ">
+                                <rect key="frame" x="327" y="59" width="48" height="18"/>
+                                <buttonCell key="cell" type="check" title="--all" bezelStyle="regularSquare" imagePosition="left" inset="2" id="CfU-zd-sQr">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="toggleServices:" target="HjG-kB-Jyt" id="iZp-0m-Bx8"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="OlH-Eq-Kt2" firstAttribute="top" secondItem="pVd-ha-dd1" secondAttribute="bottom" constant="8" symbolic="YES" id="7yz-II-d6c"/>
-                            <constraint firstItem="6Fc-wz-l90" firstAttribute="leading" secondItem="SoG-OU-9pP" secondAttribute="leading" id="9yX-fd-Fqv"/>
-                            <constraint firstItem="SoG-OU-9pP" firstAttribute="baseline" secondItem="lTk-Z7-fHE" secondAttribute="baseline" id="A5H-2A-GOV"/>
-                            <constraint firstItem="Pjw-QH-Ddo" firstAttribute="baseline" secondItem="VRx-57-Dgt" secondAttribute="baseline" id="Fnr-d4-1Se"/>
-                            <constraint firstItem="lTk-Z7-fHE" firstAttribute="trailing" secondItem="VRx-57-Dgt" secondAttribute="trailing" id="HB8-oh-6J9"/>
-                            <constraint firstItem="OlH-Eq-Kt2" firstAttribute="leading" secondItem="Pjw-QH-Ddo" secondAttribute="leading" id="HzG-ax-WEI"/>
-                            <constraint firstItem="SoG-OU-9pP" firstAttribute="top" secondItem="6Fc-wz-l90" secondAttribute="bottom" constant="8" symbolic="YES" id="RNR-tD-njD"/>
-                            <constraint firstAttribute="trailing" secondItem="OlH-Eq-Kt2" secondAttribute="trailing" constant="252" id="Z37-W0-B8x"/>
-                            <constraint firstAttribute="bottom" secondItem="Pjw-QH-Ddo" secondAttribute="bottom" constant="20" symbolic="YES" id="c1H-OV-mLp"/>
-                            <constraint firstItem="pVd-ha-dd1" firstAttribute="top" secondItem="SoG-OU-9pP" secondAttribute="bottom" constant="8" symbolic="YES" id="cZG-EL-Cis"/>
-                            <constraint firstItem="6Fc-wz-l90" firstAttribute="leading" secondItem="rOx-uY-uBc" secondAttribute="leading" constant="20" symbolic="YES" id="dwJ-8R-eWg"/>
-                            <constraint firstAttribute="trailing" secondItem="lTk-Z7-fHE" secondAttribute="trailing" constant="20" symbolic="YES" id="eim-55-D8R"/>
-                            <constraint firstItem="Pjw-QH-Ddo" firstAttribute="top" secondItem="OlH-Eq-Kt2" secondAttribute="bottom" constant="14" id="hcC-y6-CA9"/>
-                            <constraint firstItem="pVd-ha-dd1" firstAttribute="leading" secondItem="OlH-Eq-Kt2" secondAttribute="leading" id="j5D-bl-0yi"/>
-                            <constraint firstItem="SoG-OU-9pP" firstAttribute="leading" secondItem="pVd-ha-dd1" secondAttribute="leading" id="pjV-sV-izU"/>
-                            <constraint firstItem="lTk-Z7-fHE" firstAttribute="leading" secondItem="SoG-OU-9pP" secondAttribute="trailing" constant="8" symbolic="YES" id="qP4-QR-mtV"/>
-                            <constraint firstItem="6Fc-wz-l90" firstAttribute="top" secondItem="rOx-uY-uBc" secondAttribute="top" constant="20" symbolic="YES" id="qxE-j5-7pi"/>
+                            <constraint firstItem="Pjw-QH-Ddo" firstAttribute="top" secondItem="9j6-oA-7W1" secondAttribute="bottom" constant="20" symbolic="YES" id="2OU-f6-l5R"/>
+                            <constraint firstAttribute="trailing" secondItem="lTk-Z7-fHE" secondAttribute="trailing" constant="20" symbolic="YES" id="2XA-sy-X7s"/>
+                            <constraint firstItem="SoG-OU-9pP" firstAttribute="top" secondItem="6Fc-wz-l90" secondAttribute="bottom" constant="8" symbolic="YES" id="2qG-WJ-L49"/>
+                            <constraint firstAttribute="trailing" secondItem="OlH-Eq-Kt2" secondAttribute="trailing" constant="252" id="30U-P2-KS6"/>
+                            <constraint firstItem="SoG-OU-9pP" firstAttribute="baseline" secondItem="lTk-Z7-fHE" secondAttribute="baseline" id="4DN-il-2cH"/>
+                            <constraint firstItem="Q1m-3r-nuM" firstAttribute="baseline" secondItem="Heg-5G-Dch" secondAttribute="baseline" id="4MC-TI-k91"/>
+                            <constraint firstItem="6Fc-wz-l90" firstAttribute="top" secondItem="rOx-uY-uBc" secondAttribute="top" constant="20" symbolic="YES" id="9LP-zc-BIc"/>
+                            <constraint firstItem="9j6-oA-7W1" firstAttribute="baseline" secondItem="Q1m-3r-nuM" secondAttribute="baseline" id="Dfj-UH-1Lg"/>
+                            <constraint firstItem="Mfy-fm-G9z" firstAttribute="top" secondItem="OlH-Eq-Kt2" secondAttribute="bottom" constant="16" id="HJV-VU-I8R"/>
+                            <constraint firstItem="Q1m-3r-nuM" firstAttribute="leading" secondItem="9j6-oA-7W1" secondAttribute="trailing" constant="8" symbolic="YES" id="Jmc-f3-uNd"/>
+                            <constraint firstItem="9j6-oA-7W1" firstAttribute="leading" secondItem="Pjw-QH-Ddo" secondAttribute="leading" id="LGc-7Q-1z9"/>
+                            <constraint firstItem="lTk-Z7-fHE" firstAttribute="leading" secondItem="SoG-OU-9pP" secondAttribute="trailing" constant="8" symbolic="YES" id="Olr-LX-nP8"/>
+                            <constraint firstItem="6t7-8U-NLJ" firstAttribute="leading" secondItem="Ucl-2d-lH8" secondAttribute="trailing" constant="8" symbolic="YES" id="P3i-l6-hKc"/>
+                            <constraint firstItem="SoG-OU-9pP" firstAttribute="leading" secondItem="pVd-ha-dd1" secondAttribute="leading" id="PeM-FW-vRQ"/>
+                            <constraint firstAttribute="bottom" secondItem="Pjw-QH-Ddo" secondAttribute="bottom" constant="20" symbolic="YES" id="QKe-H5-CJk"/>
+                            <constraint firstItem="nr3-73-krd" firstAttribute="leading" secondItem="Heg-5G-Dch" secondAttribute="trailing" constant="8" symbolic="YES" id="QSq-HL-DjV"/>
+                            <constraint firstItem="Mfy-fm-G9z" firstAttribute="leading" secondItem="9j6-oA-7W1" secondAttribute="leading" id="RsI-Wm-nqR"/>
+                            <constraint firstItem="Heg-5G-Dch" firstAttribute="baseline" secondItem="nr3-73-krd" secondAttribute="baseline" id="TjE-EH-hRv"/>
+                            <constraint firstItem="9j6-oA-7W1" firstAttribute="top" secondItem="Mfy-fm-G9z" secondAttribute="bottom" constant="8" symbolic="YES" id="V3M-JB-gR1"/>
+                            <constraint firstItem="Heg-5G-Dch" firstAttribute="leading" secondItem="Q1m-3r-nuM" secondAttribute="trailing" constant="8" symbolic="YES" id="VTf-La-e9s"/>
+                            <constraint firstItem="OlH-Eq-Kt2" firstAttribute="leading" secondItem="Mfy-fm-G9z" secondAttribute="leading" id="Xhz-H2-SeY"/>
+                            <constraint firstItem="Ucl-2d-lH8" firstAttribute="baseline" secondItem="6t7-8U-NLJ" secondAttribute="baseline" id="YFV-wX-B83"/>
+                            <constraint firstItem="nr3-73-krd" firstAttribute="baseline" secondItem="Ucl-2d-lH8" secondAttribute="baseline" id="ZFz-Da-DFU"/>
+                            <constraint firstItem="pVd-ha-dd1" firstAttribute="leading" secondItem="OlH-Eq-Kt2" secondAttribute="leading" id="aP5-oV-9UK"/>
+                            <constraint firstItem="lTk-Z7-fHE" firstAttribute="trailing" secondItem="VRx-57-Dgt" secondAttribute="trailing" id="gEu-Fy-hUZ"/>
+                            <constraint firstItem="6Fc-wz-l90" firstAttribute="leading" secondItem="rOx-uY-uBc" secondAttribute="leading" constant="20" symbolic="YES" id="pAH-FA-PQJ"/>
+                            <constraint firstItem="OlH-Eq-Kt2" firstAttribute="top" secondItem="pVd-ha-dd1" secondAttribute="bottom" constant="8" symbolic="YES" id="rBk-D6-UoW"/>
+                            <constraint firstItem="6Fc-wz-l90" firstAttribute="leading" secondItem="SoG-OU-9pP" secondAttribute="leading" id="sGa-cv-FEb"/>
+                            <constraint firstItem="Ucl-2d-lH8" firstAttribute="leading" secondItem="nr3-73-krd" secondAttribute="trailing" constant="8" symbolic="YES" id="u10-Yw-NOf"/>
+                            <constraint firstItem="pVd-ha-dd1" firstAttribute="top" secondItem="SoG-OU-9pP" secondAttribute="bottom" constant="8" symbolic="YES" id="uwJ-hv-dhv"/>
+                            <constraint firstItem="Pjw-QH-Ddo" firstAttribute="baseline" secondItem="VRx-57-Dgt" secondAttribute="baseline" id="yVX-TE-sxG"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="allServices" destination="6t7-8U-NLJ" id="F2n-Oa-tiM"/>
+                        <outlet property="dnsmasqService" destination="Ucl-2d-lH8" id="EhA-Z2-B73"/>
+                        <outlet property="mysqlService" destination="nr3-73-krd" id="WVM-pN-XFL"/>
+                        <outlet property="nginxService" destination="Q1m-3r-nuM" id="OXU-VT-eXu"/>
+                        <outlet property="phpService" destination="9j6-oA-7W1" id="xxv-Lf-gQu"/>
+                        <outlet property="redisService" destination="Heg-5G-Dch" id="nRi-Um-Shb"/>
                         <outlet property="shortcutView" destination="OlH-Eq-Kt2" id="zRr-40-qhB"/>
                         <outlet property="xDebugFilePath" destination="SoG-OU-9pP" id="Qf6-pn-utY"/>
                     </connections>
                 </viewController>
                 <customObject id="XTW-I5-E9B" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="151" y="784.5"/>
+            <point key="canvasLocation" x="151" y="814.5"/>
         </scene>
     </scenes>
 </document>

@@ -1,6 +1,6 @@
 <div align="center">
 
-[![Logo](xDebug%20Toggler/Assets.xcassets/light.imageset/64.png)](https://github.com/deligoez/xDebug-Toggler)
+[![Logo](xDebugToggler/Assets.xcassets/light.imageset/64.png)](https://github.com/deligoez/xDebug-Toggler)
 
 </div>
 

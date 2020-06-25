@@ -38,6 +38,8 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
         self.shortcut = XDebugManager.getShortcut()
         
         self.watchShortcutKeyChanges()
+        
+        XDebugManager.registerServiceSettings()
     }
     
     func applicationWillTerminate(_ aNotification: Notification) {

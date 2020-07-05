@@ -1,6 +1,15 @@
 MIT License
 
-Copyright (c) 2020 Yunus Emre Deligöz
+Copyright (c) Yunus Emre Deligöz
+
+
+
+"X" (Dark) Icon by Imam from the Noun Project
+
+"X" (Light) Icon by Imam from the Noun Project
+
+"loading" Icon by Vicons Design from the Noun Project
+
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

@@ -8,6 +8,8 @@
 
 import Cocoa
 import MASShortcut
+import SwiftShell
+import Foundation
 
 class XDebugManager: NSObject {
     
@@ -149,20 +151,22 @@ class XDebugManager: NSObject {
     }
     
     class func restartBrewServices(service: String) {
-        let pipe = Pipe()
-        let brew = Process()
-        
-        brew.launchPath = "/usr/local/bin/brew"
-        brew.arguments = ["services", "restart", service]
-        brew.standardOutput = pipe
-        
-        brew.launch()
-        brew.waitUntilExit()
-        
-        let data = pipe.fileHandleForReading.readDataToEndOfFile()
-        let output = String(data: data, encoding: .utf8)!
-        
-        print(output)
+        do {
+            var cleanctx = CustomContext(main)
+            cleanctx.env["PATH"] =
+                "/Library/Apple/usr/bin:" +
+                "/sbin:" +
+                "/usr/sbin:" +
+                "/bin:" +
+                "/usr/bin:" +
+                "/usr/local/bin:" +
+                "/usr/local/sbin:" +
+                "~/.composer/vendor/bin"
+            
+            try cleanctx.runAndPrint(bash: "brew services restart " + service)
+        } catch {
+
+        }
     }
     
     class func registerSetttings() {

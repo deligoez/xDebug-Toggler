@@ -4,7 +4,7 @@
 
 ### xDebug-Toggler
 
-![Screenshoot](https://raw.githubusercontent.com/deligoez/xDebug-Toggler/master/.github/screenshots/xdebugtoggler.png)
+![Screenshoot](.github/screenshots/xdebugtoggler.png)
 
 </div>
 
@@ -12,7 +12,7 @@
 
 xDebugToggler.app for macOS allows you simply toggle xDebug `on` and `off`.
 
-You can also restart system some services while toggling like `PHP`, `Nginx`, `MySQL` that you can choose on the application settings.
+You can also restart the system some services while toggling like `PHP`, `Nginx`, `MySQL` that you can choose on the application settings.
 
 If you just work on `CLI` scripts like `testing`, you shouldn't need to restart any system service.
 
@@ -57,11 +57,11 @@ xdebug.file_link_format=phpstorm://open?%f:%l
 
 ## ⚙️ Settings
 
-Right click the app's icon on the status bar and choose `Settings...`
+Right-click the app's icon on the status bar and choose `Settings...`
 
 <div align="center">
 
-![Screenshoot](https://raw.githubusercontent.com/deligoez/xDebug-Toggler/master/.github/screenshots/settings.png)
+![Screenshoot](.github/screenshots/settings.png)
 
 </div>
 
@@ -73,11 +73,27 @@ While restarting services xDebugToggler app uses `brew restart service` command 
 
 ## 🕵🏻‍♂️ Troubleshooting
 
-After first start, you may need to allow the app to open from `Security & Privacy` preferences.
+After the first start, you may need to allow the app to open from `Security & Privacy` preferences.
 
 <div align="center">
 
-![Allow](https://raw.githubusercontent.com/deligoez/xDebug-Toggler/master/.github/screenshots/security.png)
+![Allow](.github/screenshots/security.png)
+
+If you see a warning that the app can't be opened because Apple cannot check it for malicious software. You can do the following:
+
+![Can't open](.github/screenshots/cannotopen.png)
+
+- Locate the app on your `/Applications` folder and right click on it.
+
+![Right Click](.github/screenshots/rightclick.png)
+
+- Click the `Open` while pressing the `Option/Alt` Key on the keyboard.
+
+![Open](.github/screenshots/open.png)
+
+- After that, you will be able to see and click the `Open` button.
+
+
 
 </div>
 
@@ -87,7 +103,7 @@ macOS 10.14+
 
 ## 📖 Changelog
 
-Please see [CHANGELOG.md](CHANGELOG.md) for more information what has changed recently.
+Please see [CHANGELOG.md](CHANGELOG.md) for more information on what has changed recently.
 
 ## 🤝 Contributing
 
@@ -95,7 +111,7 @@ Please see [CONTRIBUTING.md](CONTRIBUTING.md) for details.
 
 ## 🔒  Security and Vulnerability Reporting
 
-Full information and description of our security policy please visit [SECURITY.md](SECURITY.md)
+For full information and description of our security policy please visit [SECURITY.md](SECURITY.md)
 
 ## 🎉 Credits
 

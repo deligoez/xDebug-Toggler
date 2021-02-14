@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		1E1C51FF24A54E1500DD71A7 /* CHANGELOG.md in Resources */ = {isa = PBXBuildFile; fileRef = 1E1C51FE24A54E1500DD71A7 /* CHANGELOG.md */; };
 		1E4EF78A2496D89100EC2CBE /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 1E4EF7882496D89000EC2CBE /* README.md */; };
-		1E4EF78B2496D89100EC2CBE /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 1E4EF7892496D89100EC2CBE /* LICENSE */; };
+		1E793B362589202700F21136 /* SwiftShell in Frameworks */ = {isa = PBXBuildFile; productRef = 1E793B352589202700F21136 /* SwiftShell */; };
 		1E97FD492496A49D0070611F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E97FD482496A49D0070611F /* AppDelegate.swift */; };
 		1E97FD4B2496A49D0070611F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E97FD4A2496A49D0070611F /* ViewController.swift */; };
 		1E97FD502496A4A20070611F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E97FD4E2496A4A20070611F /* Main.storyboard */; };
@@ -21,7 +21,6 @@
 /* Begin PBXFileReference section */
 		1E1C51FE24A54E1500DD71A7 /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
 		1E4EF7882496D89000EC2CBE /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		1E4EF7892496D89100EC2CBE /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		1E97FD452496A49D0070611F /* xDebugToggler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = xDebugToggler.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E97FD482496A49D0070611F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1E97FD4A2496A49D0070611F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -37,6 +36,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1E793B362589202700F21136 /* SwiftShell in Frameworks */,
 				1ED94384249ACADF0078D6C0 /* MASShortcut in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -49,7 +49,6 @@
 			children = (
 				1E97FD472496A49D0070611F /* xDebugToggler */,
 				1E97FD462496A49D0070611F /* Products */,
-				1E4EF7892496D89100EC2CBE /* LICENSE */,
 				1E4EF7882496D89000EC2CBE /* README.md */,
 				1E1C51FE24A54E1500DD71A7 /* CHANGELOG.md */,
 			);
@@ -95,6 +94,7 @@
 			name = xDebugToggler;
 			packageProductDependencies = (
 				1ED94383249ACADF0078D6C0 /* MASShortcut */,
+				1E793B352589202700F21136 /* SwiftShell */,
 			);
 			productName = "xDebug Toggler";
 			productReference = 1E97FD452496A49D0070611F /* xDebugToggler.app */;
@@ -107,7 +107,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1150;
-				LastUpgradeCheck = 1150;
+				LastUpgradeCheck = 1230;
 				ORGANIZATIONNAME = "Yunus Emre Deligöz";
 				TargetAttributes = {
 					1E97FD442496A49D0070611F = {
@@ -126,6 +126,7 @@
 			mainGroup = 1E97FD3C2496A49D0070611F;
 			packageReferences = (
 				1ED94382249ACADF0078D6C0 /* XCRemoteSwiftPackageReference "MASShortcut" */,
+				1E793B342589202700F21136 /* XCRemoteSwiftPackageReference "SwiftShell" */,
 			);
 			productRefGroup = 1E97FD462496A49D0070611F /* Products */;
 			projectDirPath = "";
@@ -144,7 +145,6 @@
 				1E4EF78A2496D89100EC2CBE /* README.md in Resources */,
 				1E1C51FF24A54E1500DD71A7 /* CHANGELOG.md in Resources */,
 				1E97FD5D2496ACC30070611F /* Assets.xcassets in Resources */,
-				1E4EF78B2496D89100EC2CBE /* LICENSE in Resources */,
 				1E97FD502496A4A20070611F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -202,6 +202,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -262,6 +263,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -294,6 +296,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = xDebugToggler/xDebugToggler.entitlements;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = FGAL7W2M9U;
@@ -304,6 +307,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MARKETING_VERSION = 1.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = deligoez.xDebugToggler;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -315,6 +319,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = xDebugToggler/xDebugToggler.entitlements;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = FGAL7W2M9U;
@@ -325,6 +330,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MARKETING_VERSION = 1.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = deligoez.xDebugToggler;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -355,6 +361,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		1E793B342589202700F21136 /* XCRemoteSwiftPackageReference "SwiftShell" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kareman/SwiftShell";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.1.0;
+			};
+		};
 		1ED94382249ACADF0078D6C0 /* XCRemoteSwiftPackageReference "MASShortcut" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/rampatra/MASShortcut";
@@ -366,6 +380,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		1E793B352589202700F21136 /* SwiftShell */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1E793B342589202700F21136 /* XCRemoteSwiftPackageReference "SwiftShell" */;
+			productName = SwiftShell;
+		};
 		1ED94383249ACADF0078D6C0 /* MASShortcut */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 1ED94382249ACADF0078D6C0 /* XCRemoteSwiftPackageReference "MASShortcut" */;

@@ -9,6 +9,15 @@
           "revision": "883265c7f54368b45b282723ae7c4f2d5e68ab49",
           "version": "2.4.1"
         }
+      },
+      {
+        "package": "SwiftShell",
+        "repositoryURL": "https://github.com/kareman/SwiftShell",
+        "state": {
+          "branch": null,
+          "revision": "99680b2efc7c7dbcace1da0b3979d266f02e213c",
+          "version": "5.1.0"
+        }
       }
     ]
   },

@@ -18,6 +18,7 @@ class ViewController: NSViewController {
     @IBOutlet weak var shortcutView: MASShortcutView!
     @IBOutlet weak var xDebugFilePath: NSTextField!
     @IBOutlet weak var phpService: NSButton!
+    @IBOutlet weak var php74Service: NSButton!
     @IBOutlet weak var nginxService: NSButton!
     @IBOutlet weak var redisService: NSButton!
     @IBOutlet weak var mysqlService: NSButton!
@@ -131,6 +132,7 @@ class ViewController: NSViewController {
             UserDefaults.standard.set(NSControl.StateValue.off.rawValue, forKey:"serviceDnsmasq")
         } else {
             UserDefaults.standard.set(self.phpService.state.rawValue, forKey:"servicePhp")
+            UserDefaults.standard.set(self.php74Service.state.rawValue, forKey: "servicePhp74")
             UserDefaults.standard.set(self.nginxService.state.rawValue, forKey:"serviceNginx")
             UserDefaults.standard.set(self.redisService.state.rawValue, forKey:"serviceRedis")
             UserDefaults.standard.set(self.mysqlService.state.rawValue, forKey:"serviceMysql")
@@ -141,15 +143,18 @@ class ViewController: NSViewController {
     func getServiceRestarts() {
         self.allServices.state = NSControl.StateValue(UserDefaults.standard.integer(forKey:"serviceAll"))
         self.phpService.state = NSControl.StateValue(UserDefaults.standard.integer(forKey:"servicePhp"))
+        self.php74Service.state = NSControl.StateValue(UserDefaults.standard.integer(forKey: "servicePhp74"))
         self.nginxService.state = NSControl.StateValue(UserDefaults.standard.integer(forKey:"serviceNginx"))
         self.redisService.state = NSControl.StateValue(UserDefaults.standard.integer(forKey:"serviceRedis"))
         self.mysqlService.state = NSControl.StateValue(UserDefaults.standard.integer(forKey:"serviceMysql"))
         self.dnsmasqService.state = NSControl.StateValue(UserDefaults.standard.integer(forKey:"serviceDnsmasq"))
     }
+
     
     @IBAction func toggleServices(_ sender: Any) {
         if self.allServices.state == .on {
             self.phpService.state = NSControl.StateValue.off
+            self.php74Service.state = NSControl.StateValue.off
             self.nginxService.state = NSControl.StateValue.off
             self.redisService.state = NSControl.StateValue.off
             self.mysqlService.state = NSControl.StateValue.off

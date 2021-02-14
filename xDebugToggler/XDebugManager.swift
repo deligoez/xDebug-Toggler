@@ -180,6 +180,10 @@ class XDebugManager: NSObject {
         ])
         
         UserDefaults.standard.register(defaults: [
+            "servicePhp74": NSControl.StateValue.off.rawValue
+        ])
+        
+        UserDefaults.standard.register(defaults: [
             "serviceNginx": NSControl.StateValue.off.rawValue
         ])
         
@@ -207,6 +211,9 @@ class XDebugManager: NSObject {
         } else {
             if NSControl.StateValue(UserDefaults.standard.integer(forKey:"servicePhp")).rawValue == NSControl.StateValue.on.rawValue {
                 self.restartBrewServices(service: "php")
+            }
+            if NSControl.StateValue(UserDefaults.standard.integer(forKey:"servicePhp74")).rawValue == NSControl.StateValue.on.rawValue {
+                self.restartBrewServices(service: "php@7.4")
             }
             
             if NSControl.StateValue(UserDefaults.standard.integer(forKey:"serviceNginx")).rawValue == NSControl.StateValue.on.rawValue {

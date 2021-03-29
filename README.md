@@ -21,7 +21,7 @@ If you just work on `CLI` scripts like `testing`, you shouldn't need to restart 
 - Using [Homebrew Cask](https://caskroom.github.io/):
   - ```shell
     brew tap deligoez/cask
-    brew cask install xdebug-toggler
+    brew install --cask xdebug-toggler
     ```
 
 - Manual:
